@@ -7,15 +7,15 @@ namespace SemanticKernelExample01.Models
         public int Id { get; set; }
 
         [Required]
-        public string Nombre { get; set; }
+        public string Name { get; set; }
 
-        public string Descripcion { get; set; }
+        public string Description { get; set; }
 
         [DataType(DataType.Currency)]
-        public decimal Precio { get; set; }
+        public decimal Price { get; set; }
 
-        public string ImagenUrl { get; set; }
+        public string ImageUrl { get; set; }
 
-        public string Categoria { get; set; }
+        public string Category { get; set; }
     }
 }
