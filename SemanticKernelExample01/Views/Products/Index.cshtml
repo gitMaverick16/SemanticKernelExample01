@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Product>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h1>List of products</h1>
+
+<form method="get" action="@Url.Action("Index")">
+    <input type="text" name="keyword" placeholder="Search products..." value="@ViewData["Keyword"]" />
+    <button type="submit">Search</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Description</td>
+                <td>@product.Price.ToString("C")</td>
+                <td>@product.Category</td>
+                <td>
+                    <img src="@product.ImageUrl" alt="Image of @product.Name" width="50" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
